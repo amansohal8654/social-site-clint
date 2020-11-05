@@ -1,0 +1,18 @@
+.sidebarrow{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    padding-right: 70px;
+}
+
+.sidebarrow > p {
+    padding-left: 10px;
+    color: #9EA5B9;
+}
+
+.sidebarrow:hover {
+    background-color: #64BDF1;
+    border-radius: 33px;
+    
+}

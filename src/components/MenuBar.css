@@ -1,0 +1,70 @@
+.menuBar{
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    padding: 10px 10px;
+    border-bottom: 1px solid #F3F3F7;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 100;
+}
+
+.left_menu{
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.left_menu > p {
+    color: #5cbbf3;
+    font-size: 40px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.center_menu{
+    display: flex;
+    align-items: center;
+}
+.center_icon{
+    color: #98a3aa;
+    font-size: 25px;
+}
+.center_menu > input {
+    border: none;
+    padding-left: 10px;
+    top: -10px;
+    outline: none;
+}
+
+.right_menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 70px;
+    width: 10%;
+}
+
+.plus_at{
+    border-radius: 50%;
+    background-color: #eaeaf1;
+    padding: 7px;
+    width: 9%;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px #eaeaf1; 
+    margin-right: 10px ;
+    text-decoration: none;
+}
+.three_at{
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: #5BB7ED;
+    padding: 7px;
+    width: 9%;
+    text-align: center;
+    margin-right: 10px ;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px #5BB7ED; 
+}
