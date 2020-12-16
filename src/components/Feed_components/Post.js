@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useContext } from 'react'
 import "./Post.css"
 import Avatar from '@material-ui/core/Avatar';
-import { VscHeart } from "react-icons/vsc";
 import { FaRegComment } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 import moment from 'moment'
+import {AuthContext} from '../../context/auth'
+import Like from './Like'
+import Comment from './Comment'
 
 function Post({post: {id,
     body,
@@ -13,15 +15,18 @@ function Post({post: {id,
     likeCount,
     likes,
     commentCount,
-    comments}}) {
-
-        const likePost = () => {
-            console.log("like post")
-        }
+    comments}, props}) {
+        
+        const {user} = useContext(AuthContext)
 
         const commentPost = () => {
             console.log("comment post")
         }
+
+       
+
+     
+
     return (
         <div className = "post">
             <div className = "post_upper">
@@ -42,25 +47,33 @@ function Post({post: {id,
             </div>
             <div className = "comment_section">
                 <div className = "like_comment_section">
+                    <div>
+                        <Comment user = {user} post = {{id, likes, likeCount}}/>
+                    </div>
+                    <div style = {{display: "flex", alignItems:"center"}}>
                         <div className = "like_section">
-                            <VscHeart onClick={likePost} style = {{cursor:"pointer"}}/>
+                            <Like user = {user} post = {{id, likes, likeCount}} props={props} />
                             <div style = {{paddingLeft : "10px"}}>{likeCount}</div>
                         </div>
                         <div className = "like_section">
                             <FaRegComment onClick={commentPost} style = {{cursor:"pointer"}}/>
                             <div style = {{paddingLeft : "10px"}}>{commentCount}</div>
                         </div>
+                    </div>
+                        
                         
                     </div>
-                {comments && comments.map( comment => (
-                    <div key = {comment.id} className = "post_bottom">
-                    <Avatar alt="Remy Sharp" src="" />
-                        <div className = "comment_data">
-                            <h3> {comment.username}</h3>
-                            <p>{comment.body}</p>
-                        </div>
-                    </div> 
-                ))}
+                <div className = "comment_section_two">
+                    {comments && comments.map( comment => (
+                        <div key = {comment.id} className = "post_bottom">
+                        <Avatar alt="Remy Sharp" src="" />
+                            <div className = "comment_data">
+                                <h3> {comment.username}</h3>
+                                <p>{comment.body}</p>
+                            </div>
+                        </div> 
+                    ))}
+                </div>
             </div>
         </div>
     )

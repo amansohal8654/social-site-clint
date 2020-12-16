@@ -8,5 +8,17 @@
     justify-content: space-between;
     background-color: #FCFCFD;
     margin-left: 250px;
-    height: 100vh;
+}
+
+@media only screen 
+and (min-device-width: 300px) 
+and (max-device-width: 600px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+    .home_second_section{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        background-color: #FCFCFD;
+        margin-left: 0 !important; 
+    }
 }

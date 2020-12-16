@@ -55,14 +55,33 @@
 }
 
 .like_comment_section {
-    float: right;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 15%;
 }
 
 .like_section{
     display: flex;
     align-items: center;
+    padding-right: 20px;
 }
+
+.comment_section_two{
+    max-height: 60px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;         
+    border-radius: 10px !important;
+    scrollbar-color: gainsboro #FCFCFD;;
+
+}
+
+.comment_section_two::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  .comment_section_two::-webkit-scrollbar-thumb {
+    background-color: gainsboro;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid white;  /* creates padding around scroll thumb */
+  }

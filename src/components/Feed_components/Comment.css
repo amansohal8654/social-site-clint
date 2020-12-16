@@ -1,0 +1,31 @@
+.Input {
+    position: relative;
+    margin-bottom: 20px;
+    display: ruby-base-container;
+    display: -webkit-box;
+  }
+  
+  .Input-text {
+    display: block;
+    margin: 0;
+    color: inherit;
+    width: 100%;
+    font-family: inherit;
+    font-weight: inherit;
+    border: 0.5px solid #78C1EF;
+    border-radius: 0.4rem;
+    transition: box-shadow 0.5ms;
+    padding: 5px;
+    padding-right: 5px;
+    margin-left: 20px;
+    padding-right: 50px;
+  }
+  
+  .Input-text::placeholder {
+    color: #B0BEC5;
+  }
+  
+  .Input-text:focus {
+    outline: none;
+    box-shadow: 0.2rem 0.8rem 1.6rem white;
+  }

@@ -44,9 +44,11 @@ p{
 .uploaderCard > textarea {
     border: none;
     resize: none;
-    width: 500px !important;
+    width: 95% !important;
     padding-left: 20px;
     padding-top: 20px;
+    outline: none;
+
 } 
 
 .card_bottom{
@@ -54,6 +56,7 @@ p{
     padding-top: 10px;
     background-color: #FCFCFD;
     padding-bottom: 10px;
+    width: 100%;
 }
 .card_bottom > button{
     border: none;
@@ -64,4 +67,6 @@ p{
     padding-top: 0 !important;
     height: 30px;
     padding: 20px;
+    outline: none;
+    cursor: pointer;
 }

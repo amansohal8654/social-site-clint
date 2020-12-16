@@ -3,12 +3,14 @@ import SideBar from '../components/SideBar'
 import Feed from '../components/Feed'
 import './Home.css'
 
-function Home() {
+function Home(props) {
     return (
         <div className = "home_body">
-            <SideBar />
+            <div>
+                 <SideBar />
+            </div>
             <div className="home_second_section">
-                <Feed />
+                <Feed props = {props}/>
             </div>
         </div>
     )

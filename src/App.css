@@ -1,11 +1,6 @@
 *{
     margin: 0;
 }
-
-.app_body{
-    display: flex;
-    justify-content: space-between;
-}
 .app{
     display: flex;
     flex-direction: column;

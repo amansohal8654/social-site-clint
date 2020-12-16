@@ -1,50 +1,28 @@
 import React from 'react'
 import './Feed.css'
-import Post_uploader from './Feed_components/Post_uploader'
+import PostUploader from './Feed_components/PostUploader'
 import Post from './Feed_components/Post'
 import { useQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
+import {FETCH_POSTS_QUERY} from '../util/graphql'
 
-const FETCH_POSTS_QUERY = gql`
-    {
-        getPosts {
-            id
-            body
-            createdAt
-            username
-            likeCount
-            likes{
-                username
-            }
-            commentCount
-            comments{
-                id
-                username
-                createdAt
-                body
-            }
-        }
-    }
-    `
 
-function Feed() {
-    debugger
-    const {
-    loading,
-    data
-  } = useQuery(FETCH_POSTS_QUERY);
 
-  const posts = data ? data.getPosts : []
+function Feed(props) {
+    const {loading, data, refetch} = useQuery(FETCH_POSTS_QUERY, {
+        fetchPolicy: "cache-and-network",
+        nextFetchPolicy: "cache-first",
+    });
+
 
     return (
         <div className="feed">
-            <Post_uploader />
+            <PostUploader update = {() => refetch()} props = {props}/>
             {loading ? (
                 <h1>Loading posts...</h1>
                 ):(
-                    posts && posts.map(post => (
+                    data.getPosts && data.getPosts.map(post => (
                         <div key={post.id}>
-                            <Post post = {post}/>
+                            <Post post = {post} props = {props}/>
                         </div> 
                     ))
                
