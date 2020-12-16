@@ -1,3 +1,14 @@
+## Learning Technologies 
+
+Client start & Apollo setup
+Semantic UI & Routes
+Displaying posts
+Login & Register pages
+Authentication Context
+Adding posts
+Like Button
+Info Popups
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
